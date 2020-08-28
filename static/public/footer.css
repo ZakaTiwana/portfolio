@@ -1,0 +1,39 @@
+
+footer {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+footer > h2 {
+    margin-top: 2rem;
+}
+
+footer > div > * {
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width:600px) {
+  
+    footer > h2 {
+        font-size: 1.5em;
+    }
+
+    footer > div > img {
+        height: 24px;
+    }
+    #facebook_logo{
+        height: 27px;
+    }
+      
+    footer > h2 {
+        font-size: 1em;
+        margin-top: 1rem;
+    }
+
+    footer > div > img {
+        /* width: 30px; */
+        margin-right:0.5em ;
+    }
+}
