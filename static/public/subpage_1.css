@@ -80,9 +80,11 @@ nav>ul>li{
 
 
 .tag_line{
+    position: relative;
     margin-top: -10%;
     margin-bottom: auto;
     padding: 1vw 2vw;
+    animation: tag_line_mov_in 3s;
 }   
 
 
@@ -94,23 +96,31 @@ nav>ul>li{
     height: 55vw;
     max-height: 65rem;
 
-    animation: mov_in 3s;
+    animation: laptop_mov_in 3s;
 
 }
 /*
     Extra Feature - Animation - 31-03-2020
 */
 
-@keyframes mov_in{
+@keyframes laptop_mov_in{
     from{
         background-position-y: bottom;
         background-position-x: 100vw ;
     }
     to{
-        background-position-x:right ;
+        background-position-x: right ;
     }
 }
 
+@keyframes tag_line_mov_in{
+    from{
+        right:-35rem;        
+    }
+    to{
+        right:0;
+    }
+}
 
 
 
