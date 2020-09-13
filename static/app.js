@@ -6,12 +6,15 @@ const fs = require('fs');
 var myArg = process.argv.slice(2);
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.get("/sol-nonlinear-eq/*",(req,res,next)=>{
   res.sendFile(__dirname+"/public/sol-nonlinear-eq/index.html");
 //  next();
 });
 
-
+app.get("/myRead",(req,res,next)=>{
+  res.sendFile(__dirname+"/public/myRead/index.html");
+});
 app.all("*",(req,res,next)=>{
   console.log("404 Page not Found");
   res.json({err:"page not found"});
