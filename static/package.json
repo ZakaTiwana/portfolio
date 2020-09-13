@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "node" : "node app.js",
-    "start": "pm2 start app.js",
-    "80":"sudo pm2 start app.js -- 80"
+    "80": "sudo pm2 start app.js -- 80",
+    "node": "node app.js",
+    "start": "pm2 start app.js"
   },
   "dependencies": {
     "express": "~4.16.1"

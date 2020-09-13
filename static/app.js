@@ -11,10 +11,12 @@ app.get("/sol-nonlinear-eq/*",(req,res,next)=>{
 //  next();
 });
 
+
 app.all("*",(req,res,next)=>{
   console.log("404 Page not Found");
   res.json({err:"page not found"});
 });
+
 
 const log = (port)=> {
   const d = new Date();

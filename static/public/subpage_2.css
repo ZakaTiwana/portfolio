@@ -57,7 +57,7 @@
 }
 
 .subpage_2_card >ul > li{
-    transform:  translate(4rem,-19rem);
+    transform:  translate(4rem,-21rem);
 }
 
 .subpage_2_card >ul>li>img{
@@ -66,9 +66,10 @@
 
 .subpage_2_card >ul>li>p{
     /* border: 2px solid black; */
+    font-size: small;
     display: inline-block;
 
-    transform: translateY(-1rem);
+    transform: translateY(-0.7rem);
 }
 
 
