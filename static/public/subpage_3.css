@@ -1,4 +1,16 @@
-
+.code_btn{
+    color: inherit;
+    text-decoration: none;
+    color: #79c8fd;
+    font-weight: bolder;
+    font-size: large;
+    /* padding:0.2em 1em;     */
+}
+.code_btn:hover, .code_btn:focus{
+    border:2px solid #BBE1FA;
+    /* border-radius: 5%; */
+    padding: 0.1em;
+}
 .subpage_3_main{
     margin-top: 40vh;
     margin-bottom: 20vh;
@@ -42,6 +54,7 @@
 .subpage_3_card > ul {
     list-style: none;
     margin-bottom: -8rem ;
+    /* margin-left: -2rem; */
 }
 
 .subpage_3_card > ul::before{
@@ -58,6 +71,36 @@
     transform: rotate(5deg);
 }
 
+.subpage_3_card > ul {
+    list-style: none;
+    margin-bottom: -8rem ;
+}
+
+.subpage_3_card > ul::before{
+    content: "";
+    background-color: #0F4C75;
+    z-index: -1;    
+    display: block;
+    margin-left: -2.5rem;
+    margin-top: -21rem;
+
+    width: 30rem;
+    height: 25rem;
+
+    transform: rotate(5deg);
+}
+
+.subpage_3_card > ul > li::marker{
+    content: "⨠";
+    font-size: large;
+    font-weight: bolder;
+    color: aqua;
+}
+
+.subpage_3_card >ul > li{
+    margin-top: 1.5em;
+    transform:  translate(1.5rem,-21rem);
+}
 
 
 
@@ -92,12 +135,6 @@
         padding: 0;
         margin-left: 2rem;
         
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5vw;
-
-        justify-self: center;
-
     }
     
     .subpage_3_card > ul::before{
@@ -105,11 +142,15 @@
         }
     
     .subpage_3_card >ul > li{
+        margin-top: auto;
         transform:  none;
     }
     .subpage_3_card >ul>li>p{
         /* border: 2px solid black; */
         display: inline-block;
         transform: none;
+    }
+    .code_btn{
+        color: #1B262C;
     }
 }
