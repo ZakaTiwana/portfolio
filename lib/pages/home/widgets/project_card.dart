@@ -26,17 +26,21 @@ class _ProjectCardState extends State<ProjectCard> {
       padding: const EdgeInsets.all(24),
       child: LayoutBuilder(
         builder: (context, constraints) {
+          final hasImages = widget.project.imagePaths.isNotEmpty;
+
           if (constraints.maxWidth < Breakpoints.mobile) {
             // Mobile layout - stack vertically
             return Column(
               children: [
                 ProjectContent(project: widget.project),
-                const SizedBox(height: 64),
-                ProjectImageScrollView(
-                  imagePaths: widget.project.imagePaths,
-                  width: 400.0,
-                  height: 660.0,
-                ),
+                if (hasImages) ...[
+                  const SizedBox(height: 64),
+                  ProjectImageScrollView(
+                    imagePaths: widget.project.imagePaths,
+                    width: 400.0,
+                    height: 660.0,
+                  ),
+                ],
               ],
             );
           } else {
@@ -44,17 +48,17 @@ class _ProjectCardState extends State<ProjectCard> {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (widget.isImageLeft) ...[
+                if (hasImages && widget.isImageLeft) ...[
                   ProjectImageScrollView(
                     imagePaths: widget.project.imagePaths,
                     width: 400.0,
                     height: 660.0,
                   ),
-                  SizedBox(width: 64),
+                  const SizedBox(width: 64),
                 ],
                 Expanded(child: ProjectContent(project: widget.project)),
-                if (!widget.isImageLeft) ...[
-                  SizedBox(width: 64),
+                if (hasImages && !widget.isImageLeft) ...[
+                  const SizedBox(width: 64),
                   ProjectImageScrollView(
                     imagePaths: widget.project.imagePaths,
                     width: 400.0,

@@ -33,6 +33,7 @@ class HomePageText {
   // Projects Section
   static const String projectsTitle = 'My Projects';
   static const String projectsSubtitle = 'A showcase of my work';
+  static const String viewOnGitHub = 'View on GitHub';
 
   // Project summaries (1-2 lines each)
   static const String dhaoAISummary =

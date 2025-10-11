@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../domain/models/project.dart';
 import '../../../constants/theme.dart';
+import '../../../constants/text.dart';
 
 class ProjectContent extends StatelessWidget {
   final Project project;
@@ -84,17 +86,22 @@ class ProjectContent extends StatelessWidget {
           ),
           if (project.githubUrl != null) ...[
             const SizedBox(height: 20),
-            Row(
-              children: [
-                Icon(Icons.code, color: neonGreen, size: 20),
-                const SizedBox(width: 8),
-                Text(
-                  'View on GitHub',
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: neonGreen),
-                ),
-              ],
+            TextButton(
+              onPressed: () {
+                launchUrl(Uri.parse(project.githubUrl!));
+              },
+              child: Row(
+                children: [
+                  Icon(Icons.code, color: neonGreen, size: 20),
+                  const SizedBox(width: 8),
+                  Text(
+                    HomePageText.viewOnGitHub,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: neonGreen),
+                  ),
+                ],
+              ),
             ),
           ],
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../constants/theme.dart';
+import '../../../constants/text.dart';
 import 'phone_frame.dart';
 
 class ProjectImageScrollView extends StatefulWidget {
@@ -55,6 +56,46 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
   @override
   Widget build(BuildContext context) {
     final imageWidth = widget.width; // Account for padding
+
+    // If no images, show a placeholder
+    if (widget.imagePaths.isEmpty) {
+      return SizedBox(
+        height: widget.height,
+        width: widget.width,
+        child: Center(
+          child: Container(
+            width: imageWidth,
+            height: widget.height,
+            decoration: BoxDecoration(
+              color: darkGreenTint.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: neonGreen.withOpacity(0.3), width: 2),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.code, size: 64, color: neonGreen.withOpacity(0.6)),
+                const SizedBox(height: 16),
+                Text(
+                  'Code Project',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: neonGreen,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  HomePageText.viewOnGitHub,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: lightGray),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
 
     return SizedBox(
       height: widget.height,

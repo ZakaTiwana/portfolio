@@ -15,7 +15,6 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.dhaoAIMobileApp.dark.ssIphone9Dark.path,
       ],
       technologies: ['Flutter', 'Dart', 'Riverpod', 'Clean Architecture'],
-      githubUrl: 'https://github.com/zakatiwana/dhaoai',
     ),
     Project(
       name: 'LAAF',
@@ -28,7 +27,6 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.laaf.dark.laafDark03.path,
       ],
       technologies: ['Flutter', 'Dart', 'Health Tech', 'IoT'],
-      githubUrl: 'https://github.com/zakatiwana/laaf',
     ),
     Project(
       name: 'MyVox',
@@ -43,7 +41,6 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.myVox.a06CreateReportUr.path,
       ],
       technologies: ['Flutter', 'Dart', 'Localization', 'Legal Tech'],
-      githubUrl: 'https://github.com/zakatiwana/myvox',
     ),
     Project(
       name: 'Roomph',
@@ -56,7 +53,6 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.roomph.roomph4.path,
       ],
       technologies: ['Swift', 'iOS', 'Hotel Booking', 'Native'],
-      githubUrl: 'https://github.com/zakatiwana/roomph',
     ),
     Project(
       name: 'TapPay',
@@ -69,7 +65,6 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.tapPay.tapay4.path,
       ],
       technologies: ['Flutter', 'NFC', 'Payment', 'Native Integration'],
-      githubUrl: 'https://github.com/zakatiwana/tappay',
     ),
     Project(
       name: 'NewImage',
@@ -88,7 +83,22 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.newImage.newImage10.path,
       ],
       technologies: ['Swift', 'Kotlin', 'BLE', 'Fitness Tech'],
-      githubUrl: 'https://github.com/zakatiwana/newimage',
+    ),
+    Project(
+      name: 'This Portfolio Website',
+      summary:
+          'Modern, responsive Flutter web portfolio showcasing mobile development work. Features dark theme, 3D card effects, and interactive project showcase.',
+      imagePaths: [], // No images for this project
+      technologies: ['Flutter', 'Dart', 'Riverpod', 'GoRouter', 'Web'],
+      githubUrl: 'https://github.com/ZakaTiwana/portfolio',
+    ),
+    Project(
+      name: 'Network Request Package',
+      summary:
+          'A Dart package for sending network requests in an organized manner using the http package. Features retry logic, progress tracking, and custom error handling.',
+      imagePaths: [], // No images for this project
+      technologies: ['Dart', 'HTTP', 'Package', 'Network', 'Retry Logic'],
+      githubUrl: 'https://github.com/ZakaTiwana/network_request',
     ),
   ];
 });
