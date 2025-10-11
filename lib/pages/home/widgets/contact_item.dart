@@ -30,11 +30,11 @@ class ContactItem extends StatelessWidget {
         children: [
           Icon(icon, color: neonGreen, size: 16),
           const SizedBox(width: 8),
-          Text(
+          SelectableText(
             value,
             style: Theme.of(
               context,
-            ).textTheme.bodySmall?.copyWith(color: lightGray, fontSize: 12),
+            ).textTheme.bodyMedium?.copyWith(color: lightGray, fontSize: 14),
           ),
         ],
       ),

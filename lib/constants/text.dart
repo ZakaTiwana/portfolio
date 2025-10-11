@@ -35,6 +35,18 @@ class HomePageText {
   static const String projectsSubtitle = 'A showcase of my work';
   static const String viewOnGitHub = 'View on GitHub';
 
+  // Resume Section
+  static const String seeMyResume = 'See My Resume';
+  static const String downloadResume = 'Download Resume';
+  static const String backToHome = 'Back to Home';
+  static const String loadingResume = 'Loading Resume...';
+  static const String errorLoadingResume = 'Error loading resume';
+  static const String retry = 'Retry';
+  static const String unableToDownloadResume = 'Unable to download resume';
+  static const String resumePdf = 'Resume PDF';
+  static const String clickDownloadToView =
+      'Click the download button above to view or download the resume';
+
   // Project summaries (1-2 lines each)
   static const String dhaoAISummary =
       'AI-powered mobile app connecting users with intelligent agents. Built with Flutter, supporting Android and iOS with clean architecture.';

@@ -26,10 +26,12 @@ final ThemeData appTheme = ThemeData(
   colorScheme: const ColorScheme.dark(
     primary: neonGreen,
     secondary: neonGreen,
+    tertiary: darkGreenTint,
     surface: darkBackground,
     background: darkBackground,
     onPrimary: darkBackground,
     onSecondary: darkBackground,
+    onTertiary: neonGreen,
     onSurface: white,
     onBackground: white,
   ),
@@ -57,5 +59,13 @@ final ThemeData appTheme = ThemeData(
     bodyLarge: TextStyle(fontSize: 18, color: lightGray),
     bodyMedium: TextStyle(fontSize: 16, color: lightGray),
     bodySmall: TextStyle(fontSize: 14, color: lightGray),
+  ),
+
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: neonGreen,
+      foregroundColor: darkBackground,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+    ),
   ),
 );

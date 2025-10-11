@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio_flutter_web/constants/breakpoints.dart';
 import '../../../common/widgets/home_background.dart';
+import '../../../constants/text.dart';
+import '../../../router/app_route.dart';
 import 'widgets/intro_section.dart';
 import 'widgets/projects_section.dart';
 
@@ -17,7 +20,28 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       body: HomeBackground(
         child: SingleChildScrollView(
-          child: Column(children: const [IntroSection(), ProjectsSection()]),
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 24),
+                constraints: const BoxConstraints(
+                  maxWidth: Breakpoints.desktop,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () => AppRoute.resume.push(context),
+                      child: Text(HomePageText.seeMyResume),
+                    ),
+                    SizedBox(width: 64),
+                  ],
+                ),
+              ),
+              const IntroSection(),
+              const ProjectsSection(),
+            ],
+          ),
         ),
       ),
     );

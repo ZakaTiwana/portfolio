@@ -5,6 +5,7 @@ export 'package:go_router/go_router.dart';
 
 enum AppRoute {
   home(path: '/home'),
+  resume(path: '/resume'),
   error(path: '/error');
 
   const AppRoute({required this.path});

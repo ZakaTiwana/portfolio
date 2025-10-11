@@ -25,6 +25,7 @@ class _AppState extends ConsumerState<App> {
     final router = ref.watch(appRouterProvider);
     return MaterialApp.router(
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
       title: appName,
       theme: appTheme,
     );

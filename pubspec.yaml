@@ -21,6 +21,10 @@ dependencies:
 
   # URL launcher for opening external links
   url_launcher: ^6.3.1
+  
+  # PDF viewer
+  pdfrx: ^2.2.0
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +49,7 @@ flutter:
     - assets/projects/NewImage/
     - assets/projects/Roomph/
     - assets/projects/TapPay/
+    - assets/Muhammad-Zakaullah-Resume.pdf
 
 # dart run build_runner build --build-filter="lib/assets/**" --build-filter="pubspec.yaml"
 # for only limiting to 
@@ -54,7 +59,6 @@ flutter_gen:
 
   assets:
     exclude:
-      - assets/Muhammad Zakaullah Resume.pdf
       - assets/projects/**/summary.txt
       - pubspec.yaml
 
