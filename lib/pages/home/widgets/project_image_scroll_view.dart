@@ -67,14 +67,21 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
             width: imageWidth,
             height: widget.height,
             decoration: BoxDecoration(
-              color: darkGreenTint.withOpacity(0.3),
+              color: darkGreenTint.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: neonGreen.withOpacity(0.3), width: 2),
+              border: Border.all(
+                color: neonGreen.withValues(alpha: 0.3),
+                width: 2,
+              ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.code, size: 64, color: neonGreen.withOpacity(0.6)),
+                Icon(
+                  Icons.code,
+                  size: 64,
+                  color: neonGreen.withValues(alpha: 0.6),
+                ),
                 const SizedBox(height: 16),
                 Text(
                   'Code Project',
@@ -139,11 +146,11 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: neonGreen.withOpacity(0.8),
+                    color: neonGreen.withValues(alpha: 0.8),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: neonGreen.withOpacity(0.3),
+                        color: neonGreen.withValues(alpha: 0.3),
                         blurRadius: 6,
                         spreadRadius: 1,
                       ),
@@ -168,11 +175,11 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: neonGreen.withOpacity(0.8),
+                    color: neonGreen.withValues(alpha: 0.8),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: neonGreen.withOpacity(0.3),
+                        color: neonGreen.withValues(alpha: 0.3),
                         blurRadius: 6,
                         spreadRadius: 1,
                       ),
@@ -204,7 +211,7 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                       shape: BoxShape.circle,
                       color: _currentPage == index
                           ? neonGreen
-                          : neonGreen.withOpacity(0.3),
+                          : neonGreen.withValues(alpha: 0.3),
                     ),
                   ),
                 ),

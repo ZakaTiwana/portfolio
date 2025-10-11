@@ -43,7 +43,7 @@ class ProjectsSection extends ConsumerWidget {
                 final index = entry.key;
                 final project = entry.value;
                 return ProjectCard(project: project, isImageLeft: index.isOdd);
-              }).toList(),
+              }),
             ],
           ),
         ),

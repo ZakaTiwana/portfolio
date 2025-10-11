@@ -61,7 +61,7 @@ class _ResumePageState extends State<ResumePage> {
               errorBannerBuilder: (context, error, retry, dismiss) {
                 return Container(
                   padding: const EdgeInsets.all(16),
-                  color: neonGreen.withOpacity(0.1),
+                  color: neonGreen.withValues(alpha: 0.1),
                   child: Row(
                     children: [
                       Icon(Icons.error, color: neonGreen),

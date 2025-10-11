@@ -15,7 +15,7 @@ class ProfilePicture extends StatelessWidget {
         border: Border.all(color: neonGreen, width: 3),
         boxShadow: [
           BoxShadow(
-            color: neonGreen.withOpacity(0.3),
+            color: neonGreen.withValues(alpha: 0.3),
             blurRadius: 20,
             spreadRadius: 5,
           ),

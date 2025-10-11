@@ -21,23 +21,23 @@ class ProjectContent extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            darkGreenTint.withOpacity(0.8),
-            darkBackground.withOpacity(0.9),
-            neonGreen.withOpacity(0.05),
+            darkGreenTint.withValues(alpha: 0.8),
+            darkBackground.withValues(alpha: 0.9),
+            neonGreen.withValues(alpha: 0.05),
           ],
           stops: const [0.0, 0.8, 1.0],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: neonGreen.withOpacity(0.2), width: 1),
+        border: Border.all(color: neonGreen.withValues(alpha: 0.2), width: 1),
         boxShadow: [
           BoxShadow(
-            color: neonGreen.withOpacity(0.1),
+            color: neonGreen.withValues(alpha: 0.1),
             blurRadius: 20,
             spreadRadius: 2,
             offset: const Offset(0, 8),
           ),
           BoxShadow(
-            color: darkBackground.withOpacity(0.3),
+            color: darkBackground.withValues(alpha: 0.3),
             blurRadius: 10,
             spreadRadius: 1,
             offset: const Offset(0, 4),
@@ -67,10 +67,10 @@ class ProjectContent extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: neonGreen.withOpacity(0.1),
+                  color: neonGreen.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: neonGreen.withOpacity(0.3),
+                    color: neonGreen.withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),

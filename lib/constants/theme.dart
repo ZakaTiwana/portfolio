@@ -28,12 +28,10 @@ final ThemeData appTheme = ThemeData(
     secondary: neonGreen,
     tertiary: darkGreenTint,
     surface: darkBackground,
-    background: darkBackground,
     onPrimary: darkBackground,
     onSecondary: darkBackground,
     onTertiary: neonGreen,
     onSurface: white,
-    onBackground: white,
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
