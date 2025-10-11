@@ -92,7 +92,7 @@ final projectsProvider = Provider<List<Project>>((ref) {
     Project(
       name: 'This Portfolio Website',
       summary:
-          'Modern, responsive Flutter web portfolio showcasing mobile development work. Features dark theme, 3D card effects, and interactive project showcase.',
+          'Modern, responsive Flutter web portfolio showcasing mobile development work. Features modern theme & effects and interactive project showcase.',
       imagePaths: [], // No images for this project
       technologies: ['Flutter', 'Dart', 'Riverpod', 'GoRouter', 'Web'],
       githubUrl: 'https://github.com/ZakaTiwana/portfolio',
