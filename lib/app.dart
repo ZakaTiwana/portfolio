@@ -28,6 +28,10 @@ class _AppState extends ConsumerState<App> {
       debugShowCheckedModeBanner: false,
       title: appName,
       theme: appTheme,
+      // Ensure no white background on mobile
+      builder: (context, child) {
+        return Container(color: Colors.transparent, child: child);
+      },
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../constants/text.dart';
 import 'phone_frame.dart';
 
 class ProjectImageScrollView extends StatefulWidget {
@@ -55,59 +54,7 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
   @override
   Widget build(BuildContext context) {
     final imageWidth = widget.width; // Account for padding
-
-    // If no images, show a placeholder
-    if (widget.imagePaths.isEmpty) {
-      return SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: Center(
-          child: Container(
-            width: imageWidth,
-            height: widget.height,
-            decoration: BoxDecoration(
-              color: Theme.of(
-                context,
-              ).colorScheme.secondary.withValues(alpha: 0.3),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: Theme.of(
-                  context,
-                ).colorScheme.primary.withValues(alpha: 0.3),
-                width: 2,
-              ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.code,
-                  size: 64,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.primary.withValues(alpha: 0.6),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Code Project',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  HomePageText.viewOnGitHub,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.outline,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
+    final isMobile = MediaQuery.of(context).size.width < 768;
 
     return SizedBox(
       height: widget.height,
@@ -116,7 +63,9 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
         children: [
           // PageView for images
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+            padding: EdgeInsets.symmetric(
+              horizontal: isMobile ? 4 : 40, // Minimal padding on mobile
+            ),
             child: PageView.builder(
               controller: _pageController,
               onPageChanged: (index) {
@@ -127,14 +76,15 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
               itemCount: widget.imagePaths.length,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 16,
+                  margin: EdgeInsets.symmetric(
+                    horizontal: isMobile ? 2 : 16, // Minimal margin on mobile
                     vertical: 16,
                   ),
                   child: PhoneFrame(
                     imagePath: widget.imagePaths[index],
-                    width: imageWidth,
-                    height: widget.height,
+                    width:
+                        imageWidth -
+                        (isMobile ? 8 : 64), // Account for minimal padding
                   ),
                 );
               },
@@ -143,7 +93,7 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
           // Left indicator
           if (_currentPage > 0)
             Positioned(
-              left: 4,
+              left: isMobile ? 8 : 4,
               top: widget.height / 2 - 15,
               child: GestureDetector(
                 onTap: _previousPage,
@@ -176,7 +126,7 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
           // Right indicator
           if (_currentPage < widget.imagePaths.length - 1)
             Positioned(
-              right: 4,
+              right: isMobile ? 8 : 4,
               top: widget.height / 2 - 15,
               child: GestureDetector(
                 onTap: _nextPage,

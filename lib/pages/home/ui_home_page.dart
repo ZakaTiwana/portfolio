@@ -82,6 +82,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               const IntroSection(),
               const ProjectsSection(),
+              // Add bottom padding to prevent white space
+              const SizedBox(height: 24),
             ],
           ),
         ),

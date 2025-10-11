@@ -23,22 +23,31 @@ class _ProjectCardState extends State<ProjectCard> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 24, horizontal: 0),
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(
+        MediaQuery.of(context).size.width < Breakpoints.mobile
+            ? 0
+            : 24, // Minimal padding on mobile
+      ),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final hasImages = widget.project.imagePaths.isNotEmpty;
 
           if (constraints.maxWidth < Breakpoints.mobile) {
-            // Mobile layout - stack vertically
+            // Mobile layout - stack vertically with full width images
             return Column(
               children: [
                 ProjectContent(project: widget.project),
                 if (hasImages) ...[
-                  const SizedBox(height: 64),
-                  ProjectImageScrollView(
-                    imagePaths: widget.project.imagePaths,
-                    width: 400.0,
-                    height: 660.0,
+                  const SizedBox(height: 32),
+                  // Use almost full width for mobile - minimal padding
+                  SizedBox(
+                    width: constraints.maxWidth, // Use full available width
+                    child: ProjectImageScrollView(
+                      imagePaths: widget.project.imagePaths,
+                      width: constraints.maxWidth, // Full width
+                      height:
+                          constraints.maxWidth * 1.65, // Maintain aspect ratio
+                    ),
                   ),
                 ],
               ],
