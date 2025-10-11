@@ -13,6 +13,10 @@ final projectsProvider = Provider<List<Project>>((ref) {
         Assets.projects.dhaoAIMobileApp.dark.ssIphone4Dark.path,
         Assets.projects.dhaoAIMobileApp.dark.ssIphone7Dark.path,
         Assets.projects.dhaoAIMobileApp.dark.ssIphone9Dark.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone1Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone4Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone7Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone9Light.path,
       ],
       technologies: ['Flutter', 'Dart', 'Riverpod', 'Clean Architecture'],
     ),
@@ -21,6 +25,10 @@ final projectsProvider = Provider<List<Project>>((ref) {
       summary:
           'Hybrid Flutter app for foot health monitoring with insole connectivity. Features user/caregiver roles, appointment booking, and real-time data tracking.',
       imagePaths: [
+        Assets.projects.laaf.light.a0Laaf02.path,
+        Assets.projects.laaf.light.a0Laaf04.path,
+        Assets.projects.laaf.light.a0Laaf061.path,
+        Assets.projects.laaf.light.a0Laaf09.path,
         Assets.projects.laaf.dark.laafDark00.path,
         Assets.projects.laaf.dark.laafDark01.path,
         Assets.projects.laaf.dark.laafDark02.path,
@@ -71,16 +79,13 @@ final projectsProvider = Provider<List<Project>>((ref) {
       summary:
           'Fitness equipment companion app. Native Swift & Kotlin with BLE communication for real-time workout tracking.',
       imagePaths: [
-        Assets.projects.newImage.newImage1.path,
         Assets.projects.newImage.newImage2.path,
         Assets.projects.newImage.newImage3.path,
         Assets.projects.newImage.newImage4.path,
-        Assets.projects.newImage.newImage5.path,
         Assets.projects.newImage.newImage6.path,
         Assets.projects.newImage.newImage7.path,
         Assets.projects.newImage.newImage8.path,
         Assets.projects.newImage.newImage9.path,
-        Assets.projects.newImage.newImage10.path,
       ],
       technologies: ['Swift', 'Kotlin', 'BLE', 'Fitness Tech'],
     ),
