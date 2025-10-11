@@ -23,9 +23,9 @@ class _HomePageState extends ConsumerState<HomePage> {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 24),
-                constraints: const BoxConstraints(
-                  maxWidth: Breakpoints.desktop,
+                padding: const EdgeInsets.only(top: 24, left: 24),
+                constraints: BoxConstraints(
+                  maxWidth: Breakpoints.desktop + 24 + 25,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,

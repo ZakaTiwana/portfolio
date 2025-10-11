@@ -1,71 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter_web/constants/dark_blue_color_scheme.dart';
+import 'color_interface.dart';
 
-// Color palette
-const Color neonGreen = Color(0xFF00FF41);
-const Color darkBackground = Color(0xFF0A0E0D);
-const Color darkGreenTint = Color(0xFF0D1512);
-const Color lightGray = Color(0xFFB0B0B0);
-const Color white = Color(0xFFFFFFFF);
+// Color scheme instance
+final ColorSchemeInterface colorScheme = DarkBlueColorScheme();
 
-// Gradients
-const LinearGradient backgroundGradient = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  colors: [darkBackground, darkGreenTint],
-);
+// Color palette - using interface
+Color get primary => colorScheme.primary;
+Color get background => colorScheme.background;
+Color get backgroundTint => colorScheme.backgroundTint;
+Color get textSecondary => colorScheme.textSecondary;
+Color get textPrimary => colorScheme.textPrimary;
 
-const LinearGradient borderGradient = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  colors: [neonGreen, Colors.transparent, neonGreen],
-);
+// Gradients - using interface
+LinearGradient get backgroundGradient => colorScheme.backgroundGradient;
+LinearGradient get borderGradient => colorScheme.borderGradient;
 
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: darkBackground,
-  colorScheme: const ColorScheme.dark(
-    primary: neonGreen,
-    secondary: darkGreenTint,
-    surface: darkBackground,
-    onPrimary: darkBackground,
-    onSecondary: neonGreen,
-    onSurface: white,
-    outline: lightGray,
+  scaffoldBackgroundColor: background,
+  colorScheme: ColorScheme.dark(
+    primary: primary,
+    secondary: backgroundTint,
+    surface: background,
+    onPrimary: background,
+    onSecondary: primary,
+    onSurface: textPrimary,
+    outline: textSecondary,
   ),
-  textTheme: const TextTheme(
+  textTheme: TextTheme(
     displayLarge: TextStyle(
       fontSize: 48,
       fontWeight: FontWeight.bold,
-      color: white,
+      color: textPrimary,
     ),
     displayMedium: TextStyle(
       fontSize: 36,
       fontWeight: FontWeight.bold,
-      color: white,
+      color: textPrimary,
     ),
     headlineLarge: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.w600,
-      color: neonGreen,
+      color: primary,
     ),
     headlineMedium: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
-      color: neonGreen,
+      color: primary,
     ),
-    bodyLarge: TextStyle(fontSize: 18, color: lightGray),
-    bodyMedium: TextStyle(fontSize: 16, color: lightGray),
-    bodySmall: TextStyle(fontSize: 14, color: lightGray),
+    bodyLarge: TextStyle(fontSize: 18, color: textSecondary),
+    bodyMedium: TextStyle(fontSize: 16, color: textSecondary),
+    bodySmall: TextStyle(fontSize: 14, color: textSecondary),
   ),
 
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: neonGreen,
-      foregroundColor: darkBackground,
+      backgroundColor: primary,
+      foregroundColor: background,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
   ),
 
-  iconTheme: const IconThemeData(color: neonGreen),
+  iconTheme: IconThemeData(color: primary),
 );

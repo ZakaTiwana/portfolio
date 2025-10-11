@@ -55,7 +55,7 @@ class _ResumePageState extends State<ResumePage> {
         ],
       ),
       body: Container(
-        decoration: const BoxDecoration(gradient: backgroundGradient),
+        decoration: BoxDecoration(gradient: backgroundGradient),
         child: Center(
           child: PdfViewer.asset(
             Assets.muhammadZakaullahResume,

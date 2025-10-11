@@ -36,7 +36,7 @@ class _HomeBackgroundState extends State<HomeBackground>
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(gradient: backgroundGradient),
+      decoration: BoxDecoration(gradient: backgroundGradient),
       child: Stack(
         children: [
           AnimatedBuilder(
@@ -102,7 +102,7 @@ class ParticlePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = neonGreen.withValues(alpha: 0.3)
+      ..color = primary.withValues(alpha: 0.3)
       ..style = PaintingStyle.fill;
 
     for (final particle in particles) {
@@ -115,13 +115,13 @@ class ParticlePainter extends CustomPainter {
       final pulse = (sin(animationValue * 2 * pi + particle.x * 10) + 1) / 2;
       final currentOpacity = particle.opacity * (0.5 + pulse * 0.5);
 
-      paint.color = neonGreen.withValues(alpha: currentOpacity);
+      paint.color = primary.withValues(alpha: currentOpacity);
 
       // Draw particle with glow effect
       canvas.drawCircle(Offset(x, y), particle.size * (1 + pulse * 0.5), paint);
 
       // Add subtle glow
-      paint.color = neonGreen.withValues(alpha: currentOpacity * 0.3);
+      paint.color = primary.withValues(alpha: currentOpacity * 0.3);
       canvas.drawCircle(Offset(x, y), particle.size * 2, paint);
     }
   }

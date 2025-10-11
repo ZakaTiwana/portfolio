@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactItem extends StatelessWidget {
@@ -19,6 +20,23 @@ class ContactItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
+        // Copy to clipboard
+        await Clipboard.setData(ClipboardData(text: value));
+
+        // Show feedback
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              content: Text('$label copied to clipboard'),
+              duration: const Duration(seconds: 2),
+            ),
+          );
+        }
+
+        await Future.delayed(const Duration(seconds: 1));
+
+        // Launch URL if possible
         if (await canLaunchUrl(Uri.parse(url))) {
           await launchUrl(Uri.parse(url));
         }
@@ -29,7 +47,9 @@ class ContactItem extends StatelessWidget {
         children: [
           Icon(icon, size: 16),
           const SizedBox(width: 8),
-          SelectableText(value, style: Theme.of(context).textTheme.bodyMedium),
+          Expanded(
+            child: Text(value, style: Theme.of(context).textTheme.bodyMedium),
+          ),
         ],
       ),
     );
