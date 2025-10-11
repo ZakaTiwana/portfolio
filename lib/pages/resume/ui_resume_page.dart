@@ -56,37 +56,38 @@ class _ResumePageState extends State<ResumePage> {
       body: Container(
         decoration: BoxDecoration(gradient: backgroundGradient),
         child: Center(
-          child: PdfViewer.asset(
-            Assets.muhammadZakaullahResume,
-            params: PdfViewerParams(
-              scrollPhysics: BouncingScrollPhysics(),
-              backgroundColor: Theme.of(context).colorScheme.surface,
-              scrollPhysicsScale: BouncingScrollPhysics(),
-              errorBannerBuilder: (context, error, retry, dismiss) {
-                return Container(
-                  padding: const EdgeInsets.all(16),
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.primary.withValues(alpha: 0.1),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.error,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          'Error loading PDF: $error',
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.outline,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 600),
+            child: PdfViewer.asset(
+              Assets.muhammadZakaullahResume,
+              params: PdfViewerParams(
+                backgroundColor: Theme.of(context).colorScheme.surface,
+                errorBannerBuilder: (context, error, retry, dismiss) {
+                  return Container(
+                    padding: const EdgeInsets.all(16),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.1),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.error,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'Error loading PDF: $error',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.outline,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              },
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ),

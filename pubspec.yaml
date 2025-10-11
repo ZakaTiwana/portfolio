@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.8.0
 
 dependencies:
   flutter:
@@ -22,8 +22,11 @@ dependencies:
   # URL launcher for opening external links
   url_launcher: ^6.3.1
   
+  # URL strategy for web routing
+  url_strategy: ^0.2.0
+  
   # PDF viewer
-  pdfrx: ^2.2.0
+  pdfrx: ^2.1.5
   html: ^0.15.6
   web: ^1.1.1
 
