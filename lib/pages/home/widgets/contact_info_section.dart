@@ -61,19 +61,22 @@ class ContactInfoSection extends StatelessWidget {
         const SizedBox(height: 16),
         if (isMobile)
           // Mobile layout - Wrap
-          Wrap(
-            spacing: 16,
-            runSpacing: 12,
-            children: _contactItems
-                .map(
-                  (item) => ContactItem(
-                    icon: item.icon,
-                    label: item.label,
-                    value: item.value,
-                    url: item.url,
-                  ),
-                )
-                .toList(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Wrap(
+              spacing: 16,
+              runSpacing: 12,
+              children: _contactItems
+                  .map(
+                    (item) => ContactItem(
+                      icon: item.icon,
+                      label: item.label,
+                      value: item.value,
+                      url: item.url,
+                    ),
+                  )
+                  .toList(),
+            ),
           )
         else
           // Desktop layout - Column

@@ -21,7 +21,7 @@ class HomePageText {
   static const String email = 'zakatiwana@gmail.com';
   static const String mobile = '+92 314 5310281';
   static const String github = 'github.com/zakatiwana';
-  static const String linkedin = 'linkedin.com/in/zakatiwana';
+  static const String linkedin = 'linkedin.com/in/muhammad-zakaullah';
 
   // Contact Labels
   static const String emailLabel = 'Email';
