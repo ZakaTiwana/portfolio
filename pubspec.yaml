@@ -24,7 +24,8 @@ dependencies:
   
   # PDF viewer
   pdfrx: ^2.2.0
-  universal_html: ^2.2.4
+  html: ^0.15.6
+  web: ^1.1.1
 
 dev_dependencies:
   flutter_test:

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
-import 'package:universal_html/html.dart' as html;
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../../constants/theme.dart';
 import '../../constants/text.dart';
 import '../../gen/assets.gen.dart';
 import '../../router/app_route.dart';
+import '../../util/web_download_util.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -97,18 +96,28 @@ class _ResumePageState extends State<ResumePage> {
 
   void _downloadResume() async {
     try {
-      final pdfBytes = await rootBundle.load(Assets.muhammadZakaullahResume);
-
-      if (pdfBytes.lengthInBytes > 0) {
-        final blob = html.Blob([pdfBytes.buffer.asUint8List()]);
-        final url = html.Url.createObjectUrlFromBlob(blob);
-        html.AnchorElement(href: url)
-          ..setAttribute('download', 'Muhammad_Zakaullah_Resume.pdf')
-          ..click();
-        html.Url.revokeObjectUrl(url);
-      }
+      // Use the web download utility
+      await WebDownloadUtil.downloadAsset(
+        assetPath: Assets.muhammadZakaullahResume,
+        fileName: 'Muhammad_Zakaullah_Resume.pdf',
+        mimeType: 'application/pdf',
+      );
     } catch (e) {
-      // Handle error
+      // Show error message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('${HomePageText.errorLoadingResume}: $e'),
+            backgroundColor: Colors.red.shade900,
+            duration: const Duration(seconds: 3),
+            action: SnackBarAction(
+              label: HomePageText.retry,
+              textColor: Colors.white,
+              onPressed: _downloadResume,
+            ),
+          ),
+        );
+      }
     }
   }
 }
