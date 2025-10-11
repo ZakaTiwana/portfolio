@@ -1,0 +1,23 @@
+developer: Muhammad Zakaullah Tiwana
+email: zakatiwana@gmail.com
+
+LAAF - Flutter APP.
+
+LAAF is  a hybrid application written on Flutter for Android and IOS. 
+LAAF has two types of users, namely ‘Users’ and ‘Caregivers’.
+Users are be able to register and login into LAAF. They are be able to 
+view and update their profile. They are be able to connect to their ‘Insole’ and 
+are be able to see the data extracted from them in ‘My Feet’. 
+They are also be able to view exercise. They are be able to view, like, bookmark 
+and share blogs. They are also be able to find Caregivers, see their details, 
+get in contact with them and request appointments with them. 
+They are also be able to see their upcoming appointments and their appointments history.
+They are also be able to rate their appointments, 
+products and LAAF app. They are be able to visit LAAF stores to buy LAAF products.
+Caregivers are be able to register and login into LAAF. 
+They are be able to view and update their profile.
+They are be able to add and view their patients (i.e., Users) and see their history.
+They are be able to create and view appointments with their patients. 
+They are be able to view, like, bookmark and share blogs. 
+They are be able to visit LAAF stores to view and buy LAAF products.
+And They are able to chat with one another.

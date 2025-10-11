@@ -1,0 +1,2 @@
+A hybrid application written in Flutter targeting Android and iOS. With multi-language
+support (En & Ur). Use for reporting cases by paralegals.

@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+For a Page/Screen always add releated widgets in `widgets` folder and releated providers in `providers` folder. if you are using a widget or provider that can be used across pages add that under `common` folder

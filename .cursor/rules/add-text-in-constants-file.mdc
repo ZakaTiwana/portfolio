@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+Always add text in `lib/constants/text.dart` file for any page or widget neatly separated by class name

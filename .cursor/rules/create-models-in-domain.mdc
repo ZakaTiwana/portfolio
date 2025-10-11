@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+create model classes in `lib/domain/models` folders

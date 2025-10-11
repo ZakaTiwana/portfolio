@@ -1,0 +1,1 @@
+A fitness app paired with fitness equipment. Written natively in Swift & Kotlin. Communication with devices is established through BLE.

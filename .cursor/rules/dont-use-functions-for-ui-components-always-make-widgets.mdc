@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+Never use function to make a new UI Component. But always make a new Widget class. As it saves on performance and is a clean architecture for flutter.

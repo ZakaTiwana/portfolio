@@ -1,0 +1,2 @@
+A Simple proof-of-concept app written in Flutter that uses NFC to send and receive virtual funds. NFC was read and parsed in Native code, and the results were passed to Dart/Flutter.
+
