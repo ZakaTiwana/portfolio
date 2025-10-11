@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../../constants/theme.dart';
 
 class ContactItem extends StatelessWidget {
   final IconData icon;
@@ -28,14 +27,9 @@ class ContactItem extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: neonGreen, size: 16),
+          Icon(icon, size: 16),
           const SizedBox(width: 8),
-          SelectableText(
-            value,
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.copyWith(color: lightGray, fontSize: 14),
-          ),
+          SelectableText(value, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );

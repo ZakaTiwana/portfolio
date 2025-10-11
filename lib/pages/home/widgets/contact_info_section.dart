@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../util/string_formating_extension.dart';
 import '../../../constants/text.dart';
-import '../../../constants/theme.dart';
 import '../../../domain/models/contact_item_data.dart';
 import 'contact_item.dart';
 
@@ -51,10 +50,7 @@ class ContactInfoSection extends StatelessWidget {
             Text(
               HomePageText.getInTouchTitle,
               textAlign: isMobile ? TextAlign.center : TextAlign.start,
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: neonGreen,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

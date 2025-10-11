@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../domain/models/project.dart';
-import '../../../constants/theme.dart';
 import '../../../constants/text.dart';
 
 class ProjectContent extends StatelessWidget {
@@ -11,6 +10,9 @@ class ProjectContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final linearGradientStart = Theme.of(context).colorScheme.secondary;
+    final linearGradientEnd = Theme.of(context).colorScheme.surface;
+    final linearGradientStop = Theme.of(context).colorScheme.primary;
     return Container(
       constraints: const BoxConstraints(maxWidth: 600),
       margin: const EdgeInsets.only(top: 64),
@@ -21,23 +23,26 @@ class ProjectContent extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            darkGreenTint.withValues(alpha: 0.8),
-            darkBackground.withValues(alpha: 0.9),
-            neonGreen.withValues(alpha: 0.05),
+            linearGradientStart.withValues(alpha: 0.8),
+            linearGradientEnd.withValues(alpha: 0.9),
+            linearGradientStop.withValues(alpha: 0.05),
           ],
           stops: const [0.0, 0.8, 1.0],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: neonGreen.withValues(alpha: 0.2), width: 1),
+        border: Border.all(
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
+          width: 1,
+        ),
         boxShadow: [
           BoxShadow(
-            color: neonGreen.withValues(alpha: 0.1),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             blurRadius: 20,
             spreadRadius: 2,
             offset: const Offset(0, 8),
           ),
           BoxShadow(
-            color: darkBackground.withValues(alpha: 0.3),
+            color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.3),
             blurRadius: 10,
             spreadRadius: 1,
             offset: const Offset(0, 4),
@@ -47,13 +52,7 @@ class ProjectContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            project.name,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              color: neonGreen,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          Text(project.name, style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 16),
           Text(project.summary, style: Theme.of(context).textTheme.bodyLarge),
           const SizedBox(height: 20),
@@ -67,17 +66,21 @@ class ProjectContent extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: neonGreen.withValues(alpha: 0.1),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: neonGreen.withValues(alpha: 0.3),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
                 child: Text(
                   tech,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: neonGreen,
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -92,13 +95,13 @@ class ProjectContent extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Icon(Icons.code, color: neonGreen, size: 20),
+                  Icon(Icons.code, size: 20),
                   const SizedBox(width: 8),
                   Text(
                     HomePageText.viewOnGitHub,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium?.copyWith(color: neonGreen),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ],
               ),

@@ -23,15 +23,15 @@ const LinearGradient borderGradient = LinearGradient(
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
+  scaffoldBackgroundColor: darkBackground,
   colorScheme: const ColorScheme.dark(
     primary: neonGreen,
-    secondary: neonGreen,
-    tertiary: darkGreenTint,
+    secondary: darkGreenTint,
     surface: darkBackground,
     onPrimary: darkBackground,
-    onSecondary: darkBackground,
-    onTertiary: neonGreen,
+    onSecondary: neonGreen,
     onSurface: white,
+    outline: lightGray,
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
@@ -47,12 +47,12 @@ final ThemeData appTheme = ThemeData(
     headlineLarge: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.w600,
-      color: white,
+      color: neonGreen,
     ),
     headlineMedium: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
-      color: white,
+      color: neonGreen,
     ),
     bodyLarge: TextStyle(fontSize: 18, color: lightGray),
     bodyMedium: TextStyle(fontSize: 16, color: lightGray),
@@ -66,4 +66,6 @@ final ThemeData appTheme = ThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
   ),
+
+  iconTheme: const IconThemeData(color: neonGreen),
 );

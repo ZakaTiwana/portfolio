@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../constants/text.dart';
-import '../../../constants/theme.dart';
 
 class ProfileInfo extends StatelessWidget {
   final CrossAxisAlignment alignment;
@@ -15,10 +14,7 @@ class ProfileInfo extends StatelessWidget {
         // Name
         Text(
           HomePageText.name,
-          style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            color: white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.displayMedium,
           textAlign: alignment == CrossAxisAlignment.center
               ? TextAlign.center
               : TextAlign.start,
@@ -27,10 +23,7 @@ class ProfileInfo extends StatelessWidget {
         // Title
         Text(
           HomePageText.title,
-          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-            color: neonGreen,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Theme.of(context).textTheme.headlineLarge,
           textAlign: alignment == CrossAxisAlignment.center
               ? TextAlign.center
               : TextAlign.start,
@@ -39,9 +32,7 @@ class ProfileInfo extends StatelessWidget {
         // Bio
         Text(
           HomePageText.bio,
-          style: Theme.of(
-            context,
-          ).textTheme.bodyLarge?.copyWith(color: lightGray, height: 1.6),
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.6),
           textAlign: alignment == CrossAxisAlignment.center
               ? TextAlign.center
               : TextAlign.start,

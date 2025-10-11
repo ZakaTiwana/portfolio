@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../constants/breakpoints.dart';
 import '../../../constants/text.dart';
-import '../../../constants/theme.dart';
 import '../providers/projects_provider.dart';
 import 'project_card.dart';
 
@@ -16,14 +16,14 @@ class ProjectsSection extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1200),
+          constraints: const BoxConstraints(maxWidth: Breakpoints.desktop),
           child: Column(
             children: [
               // Section Header
               Text(
                 HomePageText.projectsTitle,
                 style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  color: white,
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
@@ -31,9 +31,9 @@ class ProjectsSection extends ConsumerWidget {
               const SizedBox(height: 16),
               Text(
                 HomePageText.projectsSubtitle,
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyLarge?.copyWith(color: lightGray),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 60),

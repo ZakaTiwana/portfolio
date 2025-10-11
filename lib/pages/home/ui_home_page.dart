@@ -34,7 +34,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       onPressed: () => AppRoute.resume.push(context),
                       child: Text(HomePageText.seeMyResume),
                     ),
-                    SizedBox(width: 64),
+                    Expanded(child: SizedBox(width: 64)),
                   ],
                 ),
               ),

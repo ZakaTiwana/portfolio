@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../constants/theme.dart';
 import '../../../constants/text.dart';
 import 'phone_frame.dart';
 
@@ -67,10 +66,14 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
             width: imageWidth,
             height: widget.height,
             decoration: BoxDecoration(
-              color: darkGreenTint.withValues(alpha: 0.3),
+              color: Theme.of(
+                context,
+              ).colorScheme.secondary.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: neonGreen.withValues(alpha: 0.3),
+                color: Theme.of(
+                  context,
+                ).colorScheme.primary.withValues(alpha: 0.3),
                 width: 2,
               ),
             ),
@@ -80,22 +83,24 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                 Icon(
                   Icons.code,
                   size: 64,
-                  color: neonGreen.withValues(alpha: 0.6),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.primary.withValues(alpha: 0.6),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'Code Project',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: neonGreen,
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   HomePageText.viewOnGitHub,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: lightGray),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
                 ),
               ],
             ),
@@ -146,19 +151,23 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: neonGreen.withValues(alpha: 0.8),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.8),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: neonGreen.withValues(alpha: 0.3),
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.primary.withValues(alpha: 0.3),
                         blurRadius: 6,
                         spreadRadius: 1,
                       ),
                     ],
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.chevron_left,
-                    color: darkBackground,
+                    color: Theme.of(context).colorScheme.surface,
                     size: 18,
                   ),
                 ),
@@ -175,19 +184,23 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: neonGreen.withValues(alpha: 0.8),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withValues(alpha: 0.8),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: neonGreen.withValues(alpha: 0.3),
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.primary.withValues(alpha: 0.3),
                         blurRadius: 6,
                         spreadRadius: 1,
                       ),
                     ],
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.chevron_right,
-                    color: darkBackground,
+                    color: Theme.of(context).colorScheme.surface,
                     size: 18,
                   ),
                 ),
@@ -210,8 +223,10 @@ class _ProjectImageScrollViewState extends State<ProjectImageScrollView> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _currentPage == index
-                          ? neonGreen
-                          : neonGreen.withValues(alpha: 0.3),
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(
+                              context,
+                            ).colorScheme.primary.withValues(alpha: 0.3),
                     ),
                   ),
                 ),

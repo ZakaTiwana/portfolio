@@ -14,7 +14,7 @@ class IntroSection extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1200),
+          constraints: const BoxConstraints(maxWidth: Breakpoints.desktop),
           child: LayoutBuilder(
             builder: (context, constraints) {
               final isMobile = constraints.maxWidth < Breakpoints.mobile;
@@ -22,9 +22,9 @@ class IntroSection extends ConsumerWidget {
                 // Mobile layout - single column
                 return Column(
                   children: [
-                    ProfilePicture(),
+                    const ProfilePicture(),
                     const SizedBox(height: 32),
-                    ProfileInfo(alignment: CrossAxisAlignment.center),
+                    const ProfileInfo(alignment: CrossAxisAlignment.center),
                     const SizedBox(height: 40),
                     ContactInfoSection(isMobile: isMobile),
                   ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../constants/theme.dart';
 
 class PhoneFrame extends StatelessWidget {
   final String imagePath;
@@ -25,12 +24,8 @@ class PhoneFrame extends StatelessWidget {
           fit: BoxFit.contain,
           errorBuilder: (context, error, stackTrace) {
             return Container(
-              color: darkBackground,
-              child: const Icon(
-                Icons.image_not_supported,
-                color: lightGray,
-                size: 50,
-              ),
+              color: Theme.of(context).colorScheme.surface,
+              child: const Icon(Icons.image_not_supported, size: 50),
             );
           },
         ),

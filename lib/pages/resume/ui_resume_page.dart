@@ -19,19 +19,21 @@ class _ResumePageState extends State<ResumePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkBackground,
       appBar: AppBar(
-        backgroundColor: darkBackground,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
         leading: IconButton(
           onPressed: () => AppRoute.home.go(context),
-          icon: const Icon(Icons.arrow_back, color: neonGreen),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).colorScheme.primary,
+          ),
         ),
         centerTitle: false,
         title: Text(
           HomePageText.backToHome,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            color: neonGreen,
+            color: Theme.of(context).colorScheme.primary,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -40,10 +42,13 @@ class _ResumePageState extends State<ResumePage> {
             padding: const EdgeInsets.only(right: 16),
             child: ElevatedButton.icon(
               onPressed: _downloadResume,
-              icon: const Icon(Icons.download, color: darkBackground),
+              icon: Icon(
+                Icons.download,
+                color: Theme.of(context).colorScheme.surface,
+              ),
               label: Text(
                 HomePageText.downloadResume,
-                style: const TextStyle(color: darkBackground),
+                style: TextStyle(color: Theme.of(context).colorScheme.surface),
               ),
             ),
           ),
@@ -56,20 +61,27 @@ class _ResumePageState extends State<ResumePage> {
             Assets.muhammadZakaullahResume,
             params: PdfViewerParams(
               scrollPhysics: BouncingScrollPhysics(),
-              backgroundColor: darkBackground,
+              backgroundColor: Theme.of(context).colorScheme.surface,
               scrollPhysicsScale: BouncingScrollPhysics(),
               errorBannerBuilder: (context, error, retry, dismiss) {
                 return Container(
                   padding: const EdgeInsets.all(16),
-                  color: neonGreen.withValues(alpha: 0.1),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.primary.withValues(alpha: 0.1),
                   child: Row(
                     children: [
-                      Icon(Icons.error, color: neonGreen),
+                      Icon(
+                        Icons.error,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           'Error loading PDF: $error',
-                          style: const TextStyle(color: lightGray),
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.outline,
+                          ),
                         ),
                       ),
                     ],

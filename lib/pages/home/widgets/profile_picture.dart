@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../constants/theme.dart';
 import '../../../gen/assets.gen.dart';
 
 class ProfilePicture extends StatelessWidget {
@@ -12,10 +11,13 @@ class ProfilePicture extends StatelessWidget {
       height: 300,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: neonGreen, width: 3),
+        border: Border.all(
+          color: Theme.of(context).colorScheme.primary,
+          width: 3,
+        ),
         boxShadow: [
           BoxShadow(
-            color: neonGreen.withValues(alpha: 0.3),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
             blurRadius: 20,
             spreadRadius: 5,
           ),
@@ -27,8 +29,8 @@ class ProfilePicture extends StatelessWidget {
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
             return Container(
-              color: darkBackground,
-              child: const Icon(Icons.person, color: lightGray, size: 100),
+              color: Theme.of(context).colorScheme.surface,
+              child: const Icon(Icons.person, size: 100),
             );
           },
         ),
