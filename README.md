@@ -12,7 +12,7 @@ Senior Mobile Developer
 - **Location**: Pakistan
 - **Email**: zakatiwana@gmail.com
 - **GitHub**: [github.com/zakatiwana](https://github.com/zakatiwana)
-- **LinkedIn**: [linkedin.com/in/zakatiwana](https://linkedin.com/in/zakatiwana)
+- **LinkedIn**: [linkedin.com/in/muhammad-zakaullah](linkedin.com/in/muhammad-zakaullah)
 
 
 ## 🚀 Live Demo
