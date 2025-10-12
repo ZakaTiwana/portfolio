@@ -77,7 +77,7 @@ lib/
 
 2. **Install dependencies**
    ```bash
-   fvm sflutter pub get
+   fvm flutter pub get
    ```
 
 3. **Generate assets**
@@ -97,5 +97,6 @@ lib/
 
 ### Build for Production
 ```bash
-flutter build web --release
+fvm flutter build web --release
+firebase deploy
 ```
