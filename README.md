@@ -71,7 +71,7 @@ lib/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio_flutter_web.git
+   git clone https://github.com/ZakaTiwana/portfolio.git
    cd portfolio_flutter_web
    ```
 
