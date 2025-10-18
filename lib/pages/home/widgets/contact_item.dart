@@ -21,7 +21,7 @@ class ContactItem extends StatelessWidget {
     return InkWell(
       onTap: () async {
         // Copy to clipboard
-        await Clipboard.setData(ClipboardData(text: value));
+        await Clipboard.setData(ClipboardData(text: url));
 
         // Show feedback
         if (context.mounted) {
