@@ -52,9 +52,15 @@ class ProjectContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(project.name, style: Theme.of(context).textTheme.headlineMedium),
+          SelectableText(
+            project.name,
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
           const SizedBox(height: 16),
-          Text(project.summary, style: Theme.of(context).textTheme.bodyLarge),
+          SelectableText(
+            project.summary,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
           const SizedBox(height: 20),
           Wrap(
             spacing: 8,

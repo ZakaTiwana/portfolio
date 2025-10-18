@@ -12,7 +12,7 @@ class ProfileInfo extends StatelessWidget {
       crossAxisAlignment: alignment,
       children: [
         // Name
-        Text(
+        SelectableText(
           HomePageText.name,
           style: Theme.of(context).textTheme.displayMedium,
           textAlign: alignment == CrossAxisAlignment.center
@@ -21,7 +21,7 @@ class ProfileInfo extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         // Title
-        Text(
+        SelectableText(
           HomePageText.title,
           style: Theme.of(context).textTheme.headlineLarge,
           textAlign: alignment == CrossAxisAlignment.center
@@ -30,7 +30,7 @@ class ProfileInfo extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         // Bio
-        Text(
+        SelectableText(
           HomePageText.bio,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.6),
           textAlign: alignment == CrossAxisAlignment.center
