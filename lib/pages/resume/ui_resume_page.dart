@@ -59,7 +59,7 @@ class _ResumePageState extends State<ResumePage> {
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 600),
             child: PdfViewer.asset(
-              Assets.muhammadZakaullahResume,
+              Assets.muhammadZakaullahResumeMobileDeveloper,
               params: PdfViewerParams(
                 backgroundColor: Theme.of(context).colorScheme.surface,
                 errorBannerBuilder: (context, error, retry, dismiss) {
@@ -99,8 +99,8 @@ class _ResumePageState extends State<ResumePage> {
     try {
       // Use the web download utility
       await WebDownloadUtil.downloadAsset(
-        assetPath: Assets.muhammadZakaullahResume,
-        fileName: 'Muhammad_Zakaullah_Resume.pdf',
+        assetPath: Assets.muhammadZakaullahResumeMobileDeveloper,
+        fileName: 'Muhammad_Zakaullah_Portfolio_Mobile_Developer.pdf',
         mimeType: 'application/pdf',
       );
     } catch (e) {
