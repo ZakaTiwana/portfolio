@@ -4,22 +4,22 @@ import '../../../gen/assets.gen.dart';
 
 final projectsProvider = Provider<List<Project>>((ref) {
   return [
-    // Project(
-    //   name: 'DhaoAI - Mobile App',
-    //   summary:
-    //       'AI-powered mobile app connecting users with intelligent agents. Built with Flutter, supporting Android and iOS with clean architecture.',
-    //   imagePaths: [
-    //     Assets.projects.dhaoAIMobileApp.dark.ssIphone1Dark.path,
-    //     Assets.projects.dhaoAIMobileApp.dark.ssIphone4Dark.path,
-    //     Assets.projects.dhaoAIMobileApp.dark.ssIphone7Dark.path,
-    //     Assets.projects.dhaoAIMobileApp.dark.ssIphone9Dark.path,
-    //     Assets.projects.dhaoAIMobileApp.light.ssIphone1Light.path,
-    //     Assets.projects.dhaoAIMobileApp.light.ssIphone4Light.path,
-    //     Assets.projects.dhaoAIMobileApp.light.ssIphone7Light.path,
-    //     Assets.projects.dhaoAIMobileApp.light.ssIphone9Light.path,
-    //   ],
-    //   technologies: ['Flutter', 'Dart', 'Riverpod', 'Clean Architecture'],
-    // ),
+    Project(
+      name: 'DhaoAI - Mobile App',
+      summary:
+          'AI-powered mobile app connecting users with intelligent agents. Built with Flutter, supporting Android and iOS with clean architecture.',
+      imagePaths: [
+        Assets.projects.dhaoAIMobileApp.dark.ssIphone1Dark.path,
+        Assets.projects.dhaoAIMobileApp.dark.ssIphone4Dark.path,
+        Assets.projects.dhaoAIMobileApp.dark.ssIphone7Dark.path,
+        Assets.projects.dhaoAIMobileApp.dark.ssIphone9Dark.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone1Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone4Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone7Light.path,
+        Assets.projects.dhaoAIMobileApp.light.ssIphone9Light.path,
+      ],
+      technologies: ['Flutter', 'Dart', 'Riverpod', 'Clean Architecture'],
+    ),
     Project(
       name: 'LAAF',
       summary:
