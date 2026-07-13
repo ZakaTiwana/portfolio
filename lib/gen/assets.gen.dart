@@ -322,6 +322,8 @@ class $AssetsProjectsLaafLightGen {
 class Assets {
   const Assets._();
 
+  static const String muhammadZakaullahResumeMobileDeveloper =
+      'assets/Muhammad-Zakaullah-Resume-Mobile-developer.pdf';
   static const String muhammadZakaullahResume =
       'assets/Muhammad-Zakaullah-Resume.pdf';
   static const AssetGenImage profilePic = AssetGenImage(
@@ -330,7 +332,11 @@ class Assets {
   static const $AssetsProjectsGen projects = $AssetsProjectsGen();
 
   /// List of all assets
-  static List<dynamic> get values => [muhammadZakaullahResume, profilePic];
+  static List<dynamic> get values => [
+    muhammadZakaullahResumeMobileDeveloper,
+    muhammadZakaullahResume,
+    profilePic,
+  ];
 }
 
 class AssetGenImage {

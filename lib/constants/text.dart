@@ -13,7 +13,7 @@ class HomePageText {
 
   // Intro Section
   static const String name = 'Muhammad Zakaullah Tiwana';
-  static const String title = 'Senior Flutter Developer';
+  static const String title = 'Senior Mobile Developer';
   static const String bio =
       'Passionate Flutter & Swift (IOS) developer with expertise in mobile applications. I create beautiful, performant apps with clean architecture that deliver exceptional user experiences.';
 
